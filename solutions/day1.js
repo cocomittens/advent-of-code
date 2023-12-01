@@ -1,7 +1,20 @@
 import { data } from "../data/day1.js";
+import { Trie, TrieNode } from "../util/trie.js";
 
-function isNum(char) {
-  return /^\d$/.test(char);
+const wordDigits = new Set([
+  "one",
+  "two",
+  "three",
+  "four",
+  "five",
+  "six",
+  "seven",
+  "eight",
+  "nine",
+]);
+
+function isNum(char, wordString) {
+  return /^\d$/.test(char) || wordDigits.has(wordString);
 }
 
 const calculateCalibrations = () => {
@@ -23,6 +36,10 @@ const calculateCalibrations = () => {
 };
 
 export const calculateAnswer = () => {
+  const wordTrie = new Trie();
+  for (const num of wordDigits) {
+    wordTrie.insert(num);
+  }
   const calibrations = calculateCalibrations();
   const sum = calibrations.reduce((a, c) => a + c);
   return sum;
