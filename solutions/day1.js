@@ -60,7 +60,7 @@ const calculateCalibrations = () => {
   });
 };
 
-export const calculateAnswer = () => {
+export const calculateDay1 = () => {
   const calibrations = calculateCalibrations();
   const sum = calibrations.reduce((a, c) => a + c);
   return sum;
