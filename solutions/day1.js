@@ -54,8 +54,6 @@ const calculateCalibrations = () => {
       }
     }
 
-    console.log(item, first, last);
-
     return parseInt(first + last);
   });
 };
