@@ -1,4 +1,9 @@
-import { data } from "../data/day6";
+const data = [
+  [45, 305],
+  [97, 1062],
+  [72, 1110],
+  [95, 1695],
+];
 
 const isWin = (speed, time, distance) => {
   return speed * time >= distance;
@@ -11,7 +16,7 @@ const processRace = (race) => {
   const time = race[0];
   const distance = race[1];
 
-  while (!end && time <= i) {
+  while (!end && i <= time) {
     const win = isWin(i, time - i, distance);
     if (win && !start) {
       start = i;
