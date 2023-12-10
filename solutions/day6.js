@@ -1,8 +1,6 @@
 import { data } from "../data/day6";
 
-const processRace = (race) => {
-  return 1;
-};
+const processRace = (race) => {};
 
 const processRaces = (races) => {
   const times = races.map((race) => processRace(race));
